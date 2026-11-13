@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DavanteDent - Gestión de Citas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>DavanteDent</h1>
+        <p>Sistema de gestión de citas dentales</p>
+    </header>
+
+    <main>
+
+        <section class="formulario">
+            <h2 id="tituloFormulario">Nueva cita</h2>
+
+            <form id="formCita" novalidate>
+
+                <!-- Identificador oculto para modificar citas -->
+                <input type="hidden" id="idCita">
+
+                <div class="grupo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                    <span class="error" id="errorNombre"></span>
+                </div>
+
+                <div class="grupo">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" required>
+                    <span class="error" id="errorApellidos"></span>
+                </div>
+
+                <div class="grupo">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni"
+                           placeholder="12345678Z" required>
+                    <span class="error" id="errorDni"></span>
+                </div>
+
+                <div class="grupo">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono"
+                           placeholder="600123456" required>
+                    <span class="error" id="errorTelefono"></span>
+                </div>
+
+                <div class="grupo">
+                    <label for="fechaNacimiento">
+                        Fecha de nacimiento:
+                    </label>
+                    <input type="date" id="fechaNacimiento" required>
+                    <span class="error" id="errorFechaNacimiento"></span>
+                </div>
+
+                <div class="grupo">
+                    <label for="fechaCita">Fecha y hora de la cita:</label>
+                    <input type="datetime-local" id="fechaCita" required>
+                    <span class="error" id="errorFechaCita"></span>
+                </div>
+
+                <div class="grupo">
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" rows="4"
+                              placeholder="Motivo de la consulta..."></textarea>
+                    <span class="error" id="errorObservaciones"></span>
+                </div>
+
+                <div class="botones">
+                    <button type="submit" id="btnGuardar">
+                        Guardar cita
+                    </button>
+
+                    <button type="button" id="btnCancelar">
+                        Cancelar
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="listado">
+            <h2>Listado de citas</h2>
+
+            <div class="tabla-contenedor">
+                <table id="tablaCitas">
+                    <thead>
+                        <tr>
+                            <th>N.º</th>
+                            <th>Fecha y hora</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>DNI</th>
+                            <th>Teléfono</th>
+                            <th>Fecha nacimiento</th>
+                            <th>Observaciones</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cuerpoTabla">
+                        <tr>
+                            <td colspan="9">dato vacío</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>DavanteDent - Clínica Dental</p>
+        <p>Contacto: info@davantedent.example</p>
+        <p>Teléfono: 900 000 000 (ejemplo)</p>
+    </footer>
+
+</body>
+</html>
